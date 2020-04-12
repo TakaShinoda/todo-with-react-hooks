@@ -12,10 +12,7 @@ export const Todos = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">0</th>
-                        <td>テスト</td>
-                    </tr>
+ 
                 </tbody>
             </table>
         </>

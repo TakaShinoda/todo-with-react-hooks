@@ -1,4 +1,4 @@
-export const tasks = (state = [], action) => {
+const tasks = (state = [], action) => {
     switch(action.type) {
         case 'ADD_TASK':
             const task = { title: action.title }
@@ -13,3 +13,5 @@ export const tasks = (state = [], action) => {
             throw new Error()
     }
 }
+
+export default tasks
