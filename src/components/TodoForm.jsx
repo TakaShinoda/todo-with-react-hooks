@@ -1,5 +1,6 @@
 import React, { useReducer, useState } from 'react'
 import reducer from '../reducers'
+import { TodoList } from './TodoList'
 
 
 export const TodoForm = () => {
@@ -15,7 +16,6 @@ export const TodoForm = () => {
         setTitle('')
     }
 
-
     return (
         <>
             <form>
@@ -26,6 +26,20 @@ export const TodoForm = () => {
                 <button className="btn btn-primary" onClick={addTask} >追加</button>
                
             </form>
+
+            <h2>タスク一覧</h2>
+            <table className="table">
+                <thead className="thead-light">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">タスク</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    { state.map((task, index) => (<TodoList key={index} task={task} dispatch={dispatch} />))}
+                </tbody>
+            </table>
+            
         </>
     )
 }
