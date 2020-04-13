@@ -33,6 +33,7 @@ export const TodoForm = () => {
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">タスク</th>
+                        <th scope="col">チェック</th>
                     </tr>
                 </thead>
                 <tbody>
