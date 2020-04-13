@@ -1,10 +1,7 @@
-import React, { useReducer, useState } from 'react'
-import reducer from '../reducers'
-import { TodoList } from './TodoList'
+import React, { useState } from 'react'
 
 
-export const TodoForm = () => {
-    const [state, dispatch] = useReducer(reducer, [])
+export const TodoForm = ({ state, dispatch }) => {
     const [title, setTitle] = useState('')
 
     const addTask = e => {
@@ -25,22 +22,7 @@ export const TodoForm = () => {
                 </div>
                 <button className="btn btn-primary" onClick={addTask} >追加</button>
                
-            </form>
-
-            <h2>タスク一覧</h2>
-            <table className="table">
-                <thead className="thead-light">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">タスク</th>
-                        <th scope="col">チェック</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { state.map((task, index) => (<TodoList key={index} task={task} dispatch={dispatch} />))}
-                </tbody>
-            </table>
-            
+            </form>            
         </>
     )
 }
