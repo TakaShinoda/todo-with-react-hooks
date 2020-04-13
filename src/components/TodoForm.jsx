@@ -2,6 +2,7 @@ import React, { useReducer, useState } from 'react'
 import reducer from '../reducers'
 
 
+
 export const TodoForm = () => {
     const [state, dispatch] = useReducer(reducer, [])
     const [title, setTitle] = useState('')
@@ -15,7 +16,6 @@ export const TodoForm = () => {
         setTitle('')
     }
 
-
     return (
         <>
             <form>
@@ -26,6 +26,7 @@ export const TodoForm = () => {
                 <button className="btn btn-primary" onClick={addTask} >追加</button>
                
             </form>
+            
         </>
     )
 }
