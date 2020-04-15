@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { ADD_TASK } from '../actions'
 
 export const TodoForm = ({ state, dispatch }) => {
     const [title, setTitle] = useState('')
@@ -6,7 +7,7 @@ export const TodoForm = ({ state, dispatch }) => {
     const addTask = e => {
         e.preventDefault()
         dispatch({
-            type: 'ADD_TASK',
+            type: ADD_TASK,
             title,
             check: false
         })
