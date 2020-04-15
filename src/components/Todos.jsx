@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { TodoList } from './TodoList'
-
+import { DELETE_TASK, DELETE_ALL_TASKS } from '../actions'
 
 export const Todos = ({ state, dispatch }) => {
     const [check, setCheck] = useState(false)
@@ -11,7 +10,7 @@ export const Todos = ({ state, dispatch }) => {
         const result = window.confirm('削除していいですか？')
         if(result){
             dispatch({
-                type: 'DELETE_TASK',
+                type: DELETE_TASK,
                 check
             })
         }
@@ -21,7 +20,7 @@ export const Todos = ({ state, dispatch }) => {
     const deleteAllTasks = e => {
         e.preventDefault()
         const reset_result = window.confirm('タスクを全て削除していいですか？')
-        if(reset_result) dispatch({type: 'DELETE_ALL_TASKS'})
+        if(reset_result) dispatch({type: DELETE_ALL_TASKS})
     }
 
     return (
