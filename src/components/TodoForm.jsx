@@ -8,7 +8,8 @@ export const TodoForm = ({ state, dispatch }) => {
         e.preventDefault()
         dispatch({
             type: 'ADD_TASK',
-            title
+            title,
+            check: false
         })
         setTitle('')
     }
