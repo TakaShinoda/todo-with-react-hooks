@@ -21,9 +21,7 @@ export const TodoForm = ({ state, dispatch }) => {
                 <input className="form-control" id="formTask" placeholder="タスクを入力する" value={title} onChange={e => setTitle(e.target.value)} />
                 </div>
                 <button className="btn btn-primary" onClick={addTask} >追加</button>
-                <button className="btn btn-danger">削除</button>
-               
-            </form>            
+            </form>
         </>
     )
 }
