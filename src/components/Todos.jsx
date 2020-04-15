@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { TodoList } from './TodoList'
-
 
 export const Todos = ({ state, dispatch }) => {
     const [check, setCheck] = useState(false)

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-
 export const TodoForm = ({ state, dispatch }) => {
     const [title, setTitle] = useState('')
 
