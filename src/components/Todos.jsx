@@ -1,12 +1,26 @@
-import React from 'react'
-import { TodoList } from './TodoList'
+import React, { useState } from 'react'
+//import { TodoList } from './TodoList'
 
 
 export const Todos = ({ state, dispatch }) => {
+    const [check, setCheck] = useState(false)
+    console.log(check)
+
+    const deleteTask = e => {
+        e.preventDefault()
+        const result = window.confirm('削除していいですか？')
+        if(result){
+            dispatch({
+                type: 'DELETE_TASK',
+                check
+            })
+        }
+        setCheck(false)
+    }
     return (
         <>
             <h2>タスク一覧</h2>
-            <button className="btn btn-danger">削除</button>
+            <button className="btn btn-danger" onClick={deleteTask}>削除</button>
             <table className="table">
                 <thead className="thead-light">
                     <tr>
@@ -16,7 +30,13 @@ export const Todos = ({ state, dispatch }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    { state.map((task, index) => (<TodoList key={index} task={task} dispatch={dispatch} />))}
+                    { state.map((task, index) => (
+                            <tr key={index}>
+                                <td>{task.id}</td>
+                                <td>{task.title}</td>
+                                <td><input type="checkbox" onChange={e => setCheck(e.target.checked)}/></td>
+                            </tr>
+                    ))}
                 </tbody>
             </table>
 
