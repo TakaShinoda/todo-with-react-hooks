@@ -14,6 +14,8 @@ export const TodoForm = ({ state, dispatch }) => {
         setTitle('')
     }
 
+    const unCreatable = title === ''
+
     return (
         <>
             <form>
@@ -21,7 +23,7 @@ export const TodoForm = ({ state, dispatch }) => {
                 <label htmlFor="formTask">タスク</label>
                 <input className="form-control" id="formTask" placeholder="タスクを入力する" value={title} onChange={e => setTitle(e.target.value)} />
                 </div>
-                <button className="btn btn-primary" onClick={addTask} >追加</button>
+                <button className="btn btn-primary" disabled={unCreatable} onClick={addTask} >追加</button>
             </form>
         </>
     )
